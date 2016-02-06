@@ -1,0 +1,62 @@
+<div class="contain" style="text-align: center">
+<form method="get" action="" style="margin: 0;">
+	<input type="hidden" name="a" value="adlog" />
+	<input type="hidden" name="frame" value="yes" />
+	<b style="font-weight: bold;">User Lookup:</b> 
+	<input type="text" name="user" value="<#user>" size="13" maxlength="12" />
+	<input type="submit" value="Go" />
+</form>
+</div>
+
+<div class="contain">
+<if="$TMPL['status'] == -3">Account does not exist</if>
+<if="$TMPL['status'] == -1">Account is not a member</if>
+<if="$TMPL['status'] == -2">Account has a private log</if>
+<if="$TMPL['status'] != '-3' && $TMPL['status'] != '-1' && $TMPL['status'] != '-2'">
+
+	<table cellspacing="0">
+	<tr><th colspan="4" style="text-align: center; font-weight: bold;"><#user></th></tr>
+	<tr>
+		<td rowspan="4"><img src="<#img1>" /></td>
+		<td colspan="2" style="text-align: center;"><#gender></td>
+		<td rowspan="4"><img src="<#img2>" /></td>
+	</tr>
+	<tr class="alt">
+		<td><img src="imgs/a_green.PNG" /> Quests:</td><td><#count_complete></td>
+	</tr>
+		<td><img src="imgs/a_yellow.PNG" />  Quests:</td><td><#count_incomplete></td>
+	</tr>
+	<tr class="alt">
+		<td><img src="imgs/a_red.PNG" /> Quests:</td><td><#count_not_started></td>
+	</tr>
+	</table>
+</div>
+<div class="contain">
+	<table cellspacing="0">
+		</tr><tr class="alt"><td>Skill Total</td><td><#overall></td>
+		</tr><tr><td>Total XP</td><td><#overall_rank></td>
+		</tr><tr class="alt"><td>Overall Rank</td><td><#overall_exp></td></tr>
+	</table>
+</div>
+
+<div class="contain">
+<table cellspacing="0" cellpadding="0">
+<tr><th>Completed Quests</th></tr>
+<tr><td><select name="completed"><#completed></select></td></tr>
+<tr><th>Incomplete Quests</th></tr>
+<tr><td><select name="incomplete"><#started></select></td></tr>
+<tr><th>Unstarted Quests</th></tr>
+<tr><td><select name="unstarted"><#not_started></select></td></tr>
+</table>
+</div>
+
+<div class="contain">
+<table cellspacing="0" cellpadding="0">
+<tr><th>Activity Log</th></tr>
+</table>
+<div class="contain">
+<#activity>
+</div>
+</div>
+</if>
+</div>

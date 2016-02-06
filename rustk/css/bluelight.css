@@ -1,0 +1,19 @@
+body { background:#D9E7FE url('/images/bg2.png') repeat-x fixed top;}
+.navigation a:link, .navigation a:visited {color:#000;}
+.navigation a:active, .navigation a:hover {background:#A0A5A7;}
+.boxtop, .boxed, .tabletop, .navigation h3 {background-color:#233758;color:#fff;}
+.tablebottom, .header, .content, .quote, .boxbottom, .navigation ul {background-color:#fff;}
+div.postmeta {color:#4a4a4a;}
+.title1,.title2 {border-top:3px #005875 solid;background-color:#a8afb2;}
+.title2 {border-top-width:2px;}
+a:link, a:active, a:visited {color: #22c;}
+a:hover, .boxbottom a:hover, .navigation a:active, .navigation a:hover {color:#c22;}
+.step-title, .part {color:#424242;}
+.vip {color:#004FC6;}
+table.misc_list_table {background-color:#666;}
+ul.guides {border-left:1px #666 solid;border-top:1px #666 solid;}
+ul.guides li {background-color:#878d8f;border-bottom:1px #666 solid;}
+ul.guides li.alt {background-color:#a8afb2;}
+.toc {background-color:#a8afb2;border:1px solid #666;}
+.faq {border-left:5px #007EBB solid;background-color:#a8afb2;}
+#footer a {color:#fff;}

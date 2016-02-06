@@ -1,0 +1,19 @@
+<script type="text/javascript">
+var arr = new Array();
+arr['down'] = 0;
+arr['up'] = 0;
+arr['loop'] = 0;
+arr['cntr'] = 1;
+var Initial = '<#set>';
+var Alt = <if="$TMPL['set'] == 'cntr'">'<input type="text" name="min" size="2" value="<#min>" />:<input type="text" name="sec" size="2" maxlength="2" value="<#fsec>" /><input type="hidden" name="val" value="<#val>" />'
+</if><else>'<input type="text" name="val" size="2" value="<#val>" /><input type="hidden" name="min" value="<#min>" /><input type="hidden" name="sec" value="<#sec>" />'</else>;
+
+function switchUp(Val) {
+ if(arr[Val] != arr[Initial]) {
+  var New = document.getElementById('values').innerHTML;
+  document.getElementById('values').innerHTML = Alt;
+  Initial = Val;
+  Alt = New;
+ }
+}
+</script>

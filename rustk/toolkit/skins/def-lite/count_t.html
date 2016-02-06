@@ -1,0 +1,25 @@
+<table cellspacing="0" class="counter">
+ <tr>
+  <th colspan="2"><#name></th>
+  <th class="opt">[<a href="index.php?a=count&amp;e=<#id>" title="Edit">E</a>] [<a href="index.php?a=count&amp;d=<#id>" title="Delete">D</a>]</th>
+ </tr>
+<if="$TMPL['dir'] == 'cntr'">
+ <tr>
+  <td colspan="3"><input value="-" onclick="document.getElementById('val<#id>').value--" type="button" /> <input size="3" maxlength="7" id="val<#id>" type="text" value="<#val>" /> <input value="+" onclick="document.getElementById('val<#id>').value++" type="button" /> <br />
+<input type="button" value="Save" onclick="vSave(<#id>);" title="Save value" /> <input value="Reset" onclick="document.getElementById('val<#id>').value = <#val>" type="button" title="Reset value" /></td>
+ </tr>
+ </table>
+</if><else>
+ <tr>
+  <input class="wide" type="hidden" id="dir<#id>" value="<#dir>" />
+  <input class="wide" type="hidden" id="min<#id>" value="<#min>" />
+  <input class="wide" type="hidden" id="sec<#id>" value="<#sec>" />
+  <td id="time<#id>" class="time" colspan="3"><#min>:<#fsec></td>
+ </tr>
+ <tr>
+  <td><input class="wide" type="button" id="strt<#id>" value="Start" onclick="tStart(<#id>)" /></td>
+  <td><input class="wide" type="button" id="stp<#id>" value="Stop" onclick="tStop(<#id>)" disabled="true" /></td>
+  <td><input class="wide" type="button" id="rst<#id>" value="Reset" onclick="tReset(<#id>)" disabled="true" /></td>
+ </tr>
+ </table>
+</else>

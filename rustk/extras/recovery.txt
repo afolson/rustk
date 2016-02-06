@@ -1,0 +1,12 @@
+<#username>,
+
+This message is being sent to you because someone requested a password change for your Rustk Online RuneScape Toolkit account. If you did not request a password reset, you may disregard this message.
+
+To reset your password, please click the link below. Once you have logged in, you are encouraged to change your password via the account information menu.
+
+Password: <#password>
+Activation Link: http://www.rustk.com/rustk/index.php?a=pass&c=<#code>
+
+--
+Regards,
+Rustk Development Team

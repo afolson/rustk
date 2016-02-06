@@ -1,0 +1,37 @@
+ <div class="contain">
+  <form action="index.php" method="get">
+  <input type="hidden" name="a" value="monster" />
+  <table width="100%" cellspacing="0">
+   <tr>
+    <td>Keywords:</td>
+    <td><input type="text" name="search_term" value="<#search_term>" size="25" /></td>
+   </tr>
+   <tr>
+    <td>Search Area:</td>
+    <td><select name="search_area"><#search_areas></select> <input type="submit" value="Find" /></td>
+   </tr>
+   <tr>
+    <td colspan="2" style="text-align: center;"><a href="index.php?a=monster&amp;order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=1-25">1 - 25</a> | 
+<a href="index.php?a=monster&amp;order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=26-50">26 - 50</a> | 
+<a href="index.php?a=monster&amp;order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=51-80">51 - 80</a> | 
+<a href="index.php?a=monster&amp;order=ASC&amp;category=combat&amp;page=1&amp;search_area=combat&amp;search_term=81-781">81+</a></td>
+   </tr>
+  </table>
+  </form>
+ </div>
+ <div class="contain" style="text-align: center; padding-top: 5px; padding-bottom: 5px;">
+  Jump: <input type="text" size="1" maxlength="3" name="pgjump" value="<#curpage>" style="text-align: right;" onchange="reVisit(this.value)" />/<#totpage> - <#page_links>
+ </div>
+
+ <div class="contain">
+ <table class="items" cellspacing="0">
+  <tr>
+   <th colspan="<#numrow>"><#results> Search Results</th>
+  </tr>
+  <#topper>
+  <tr><td colspan="<#numrow>">
+  <div id="results" style="height: 442px; overflow: auto;"><table id="restable" cellspacing="0" style="width: 100%;"><#listing></table></div>
+  </td></tr>
+  </table>
+ </div>
+ <script>reHeight();</script>

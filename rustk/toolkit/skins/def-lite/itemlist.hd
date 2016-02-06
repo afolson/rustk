@@ -1,0 +1,40 @@
+<script type="text/javascript">
+<!--
+function validate(val){
+ var validChars = "0123456789";
+ var result = true;
+ for (var x=0; x < val.length; x++) {
+  var theChar = val.charAt(x);
+  if (validChars.indexOf(theChar) == -1) {
+   result = false;
+   break;
+  }
+ }
+ return result;
+}
+function reVisit(Page) {
+ if(validate(Page) == true) {
+  window.location.href = 'index.php?a=item&page='+Page+'&order=<#order>&category=<#cat>&search_area=<#search_area>&search_term=<#search_term>';
+ }
+}
+// Dynamic Javascript Resizing
+//  © 2008 No1 1000
+function reHeight() {
+ var Res	= document.getElementById('results').style;
+ var Heit;
+ Res.height	= "1000px";
+ top.frames['fSide'+top.aId].scrollTo(0,1500);
+ if(top.ISIE == 1) {
+  Heit = document.documentElement.scrollTop;
+  Res.height = 979 - Heit + "px";
+  setTimeout('document.getElementById("results").style.height = 1000 - '+Heit+' + "px";',50);
+  document.getElementById('restable').style.width = "94%";
+  Res.overflowY = "auto";
+  Res.overflowX = "hidden";
+ } else {
+  Heit = top.frames['fSide'+top.aId].pageYOffset;
+  Res.height = 995 - Heit + "px";
+ }
+}
+//-->
+</script>

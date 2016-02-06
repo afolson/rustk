@@ -1,0 +1,17 @@
+<style type="text/css">
+a,
+a:link,
+a:visited {
+	padding: 2px;
+	display: block;
+	background: #D1D5D7;
+	padding-left: 12px;
+	font-size: 13px;
+	font-variant: small-caps;
+	}
+a:active,
+a:hover {
+	background: #C1C9CC;
+	text-decoration: none;
+	}
+</style>

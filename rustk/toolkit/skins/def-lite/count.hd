@@ -1,0 +1,87 @@
+<script type="text/javascript">
+<!--
+var Ts = new Array(new Array(), new Array(), new Array(), new Array(), new Array());
+
+function tSet(Cnt) {
+ Ts[1][Cnt] = document.getElementById('min'+Cnt).value;
+ Ts[2][Cnt] = document.getElementById('sec'+Cnt).value;
+ Ts[3][Cnt] = Ts[1][Cnt];
+ Ts[4][Cnt] = Ts[2][Cnt];
+}
+
+function tStart(Cnt) {
+ if(Ts[1][Cnt] == undefined) tSet(Cnt);
+ var dir = document.getElementById('dir'+Cnt).value;
+ Ts[0][Cnt] = setInterval('change'+dir+'("'+Cnt+'")', 1000);
+ document.getElementById('stp'+Cnt).disabled = false;
+ document.getElementById('rst'+Cnt).disabled = false;
+ document.getElementById('strt'+Cnt).disabled = true;
+}
+
+function tStop(Cnt) {
+  clearInterval(Ts[0][Cnt]);
+  document.getElementById('strt'+Cnt).disabled = false;
+  document.getElementById('stp'+Cnt).disabled = true;
+}
+
+function tReset(Cnt) {
+ tStop(Cnt);
+ Ts[3][Cnt] = Ts[1][Cnt];
+ Ts[4][Cnt] = Ts[2][Cnt];
+ publish(Cnt);
+ document.getElementById('rst'+Cnt).disabled = true;
+}
+
+function changeup(Cnt) {
+ if(Ts[4][Cnt] == 59) {
+  Ts[4][Cnt] = 00;
+  Ts[3][Cnt]++;
+ }
+ else Ts[4][Cnt]++;
+ publish(Cnt);
+}
+
+function changedown(Cnt) {
+ if(Ts[4][Cnt] == 0 && Ts[3][Cnt] != 0) {
+  Ts[4][Cnt] = 59;
+  Ts[3][Cnt]--;
+ }
+ else Ts[4][Cnt]--;
+ publish(Cnt);
+ if(Ts[3][Cnt] == 0 && Ts[4][Cnt] == 0) {
+  tStop(Cnt);
+  document.getElementById('strt'+Cnt).disabled = true;
+ }
+}
+
+function changeloop(Cnt) {
+ if(Ts[4][Cnt] == 0 && Ts[3][Cnt] != 0) {
+  Ts[4][Cnt] = 59;
+  Ts[3][Cnt]--;
+ }
+ else Ts[4][Cnt]--;
+ if(Ts[3][Cnt] == 0 && Ts[4][Cnt] == 0) {
+  Ts[4][Cnt] = Ts[2][Cnt];
+  Ts[3][Cnt] = Ts[1][Cnt];
+ }
+ publish(Cnt);
+}
+
+function publish(Cnt) {
+ if(Ts[4][Cnt] < 10) Ts[4][Cnt] = '0'+Ts[4][Cnt];
+ document.getElementById('time'+Cnt).innerHTML = Ts[3][Cnt]+':'+Ts[4][Cnt];
+}
+
+function vSave(Id) {
+ var xmlhandler = top.createRequestObject();
+ if(!xmlhandler) return false;
+ else {
+  xmlhandler.onreadystatechange = function() {}
+  xmlhandler.open('GET', 'index.php?a=count&ajx=1&id='+Id+'&val='+document.getElementById('val'+Id).value, 0);
+  xmlhandler.send(null);
+ }
+  return true;
+}
+
+//-->
+</script>

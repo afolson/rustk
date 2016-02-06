@@ -1,0 +1,26 @@
+<div id="left">
+ <form action="index.php?a=price" method="post"><table width="100%" cellspacing="0">
+  <tr><td>Keywords:</td><td><input type="text" name="search_terms" value="<#search_terms>" size="25" /></td></tr>
+  <!--- <tr><td>Category:</td><td><select name="search_area"><#search_areas></select></td></tr> --->
+  <tr><td>Range:</td><td><input type="text" name="price_low" size="8" value="<#price_low>" /> to <input type="text" name="price_high" size="8" value="<#price_high>" /></td></tr>
+  <tr><td>Type:</td><td><select name="member"><option value="1"<#member1>>All Items</option><option value="0"<#member0>>Only Free Items</option></select></td></tr>
+  <tr><td style="text-align: center;" colspan="2"><input type="submit" value="Search" /></td></tr>
+ </table>
+ </form>
+</div>
+
+<div id="right">
+ <table id="items" cellspacing="0">
+  <tr>
+   <th colspan="3" style="text-align: center;">Displaying <#results> Search Results</th>
+  </tr>
+  <tr>
+   <th><!--Blank--></th>
+   <th>Name:</th>
+   <th>Price:</th>
+  </tr>
+  <tr><td colspan="3">
+  <div style="height: 400px; overflow: auto;"><table cellspacing="0" style="width: 100%;"><#listing></table></div>
+  </td></tr>
+ </table>
+</div>

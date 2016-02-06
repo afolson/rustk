@@ -1,0 +1,54 @@
+ <div id="contain">
+  <form action="index.php" method="get">
+  <input type="hidden" name="a" value="shop" />
+  <table width="100%" cellspacing="0">
+   <tr>
+    <td>Keywords:</td>
+    <td><input type="text" name="search_term" value="" size="25" /></td>
+   </tr>
+   <tr>
+    <td>Search Area:</td>
+    <td><select name="search_area">
+      <option value="itemsearch">Item Names</option>
+      <option value="shop_name">Shop Names</option>
+      <option value="location">Locations</option>
+      <option value="shopkeeper">Shopkeepers</option>
+      <option value="notes">Notes</option>
+     </select>
+    </td>
+   </tr>
+   <tr>
+    <td style="text-align: right;" colspan="2"><input type="submit" value="Search" /></td>
+   </tr>
+  </table>
+  </form>
+ </div>
+ <div id="contain" style="text-align: center; padding-top: 5px; padding-bottom: 5px;">
+  <a href="javascript:history.go(-1)"><b>&lt;-- Go Back</b></a>
+ </div>
+ 
+ 
+<div id="contain">
+<table class="items">
+<tr><th colspan="2"><#shop_name></th></tr>
+<!--- <tr><td colspan="2"><img src="/imgs/shopimg/<#image>" alt="Map of <#shop_name>" /></td></tr> --->
+<tr><td>Location:</td><td><a href="<#SELF>?a=shop&amp;search_area=location&amp;search_term=<#location>" title="Find other shops at this location."><#location></a></td></tr>
+<tr><td>Members:</td><td><#member></td></tr>
+<tr><td>Shopkeeper:</td><td><#shopkeeper></td></tr>
+<tr><td>Extra Notes:</td><td><#notes></td></tr>
+</table>
+
+<table class="items" cellpadding="0" cellspacing="0">
+<tr>
+<th>Item  <a href="<#SELF>?a=shop&amp;id=<#id>&amp;order=ASC&amp;category=item_name" title="Sort by: Item, Ascending"><img src="/rustk/toolkit/imgs/up.GIF" alt="ASC" border="0" /></a> <a href="<#SELF>?a=shop&amp;id=<#id>&amp;order=DESC&amp;category=item_name" title="Sort by: Item, Descending"><img src="/rustk/toolkit/imgs/down.GIF" alt="DESC" border="0" /></a></th>
+<th>Price <a href="<#SELF>?a=shop&amp;id=<#id>&amp;order=ASC&amp;category=item_price" title="Sort by: Price, Ascending"><img src="/rustk/toolkit/imgs/up.GIF" alt="ASC" border="0" /></a> <a href="<#SELF>?a=shop&amp;id=<#id>&amp;order=DESC&amp;category=item_price" title="Sort by: Price, Descending"><img src="/rustk/toolkit/imgs/down.GIF" alt="DESC" border="0" /></a></th>
+<#stock>
+</tr>
+<#listing>
+</table>
+
+<table class="items">
+<tr><td>Credits: <#credits></td></tr>
+</table>
+
+</div>

@@ -1,0 +1,67 @@
+ <div class="contain">
+  <form action="index.php" method="get">
+  <input type="hidden" name="a" value="item" />
+  <table width="100%" cellspacing="0">
+   <tr>
+    <td>Keywords:</td>
+    <td><input type="text" name="search_term" value="" size="25" /></td>
+   </tr>
+   <tr>
+    <td>Search Area:</td>
+    <td><select name="search_area"><#search_areas></select> <input type="submit" value="Find" />
+    </td>
+   </tr>
+  </table>
+  </form>
+ </div>
+ 
+ 
+<div class="contain">
+<table class="items">
+<tr><th colspan="3"><#i_name></th></tr>
+<tr><td rowspan="4"><img src="http://www.zybez.net/icons/l/<#i_image>.gif" alt="Picture of <#i_name>" /></td>
+<td>Members:</td><td><#i_member></td></tr>
+<tr><td>Tradable:</td><td><#i_trade></td></tr>
+<tr><td>Equipable:</td><td><#i_equip></td></tr>
+<tr><td>Weight:</td><td><#i_weight>kg</td></tr>
+<tr><td valign="top">Quest:</td><td colspan="2"><#i_questlist></td></tr>
+<tr><td valign="top">Examine:</td><td colspan="2"><#i_examine></td></tr>
+</table></div>
+
+<if="$TMPL['i_type'] == 1">
+<div class="contain">
+<table class="items">
+<tr><th>Attack:</th><th>Defense:</th></tr>
+<tr><td style="vertical-align: top;"><#i_attack></td><td><#i_defense></td></tr>
+</table></div><div class="contain">
+<table class="items">
+<tr><th>Other stats:</th></tr>
+<tr><td><#i_otherstat></td></tr>
+</table></div></if>
+
+<if="$TMPL['i_trade'] == 'Yes' && $TMPL['i_type'] != 2"><div class="contain">
+<table class="items">
+<tr><td>Market Price:</td><td><#i_prices></td></tr>
+<tr><td>High Alchemy:</td><td><#i_highalch>gp</td></tr>
+<tr><td>Low Alchemy:</td><td><#i_lowalch>gp</td></tr>
+<!--<tr><td>General Store Sell:</td><td><#i_sellgen>gp</td></tr>
+<tr><td>General Store Buy:</td><td><#i_buygen>gp</td></tr>-->
+</table></div></if><if="$TMPL['i_trade'] != 'Yes' && $TMPL['i_type'] != 2"><div class="contain">
+<table class="items">
+<tr><td>High Alchemy:</td><td><#i_highalch>gp</td></tr>
+<tr><td>Low Alchemy:</td><td><#i_lowalch>gp</td></tr>
+</table></div></if>
+
+
+<div class="contain">
+<table class="items">
+<tr><td><b>Obtained from:</b> <#i_obtain></td></tr>
+<if="$TMPL['i_type'] == 2">
+<tr><td><b>Keep/Drop:</b> <#i_keepdrop></td></tr>
+<tr><td><b>Retrieval:</b> <#i_retrieve></td></tr>
+<tr><td><b>Quest use:</b> <#i_questuse></td></tr>
+</if>
+<!--<tr><td><b>Notes:</b> <#i_notes></td></tr>
+<tr><td><b>Credits:</b> <#i_credits></td></tr>-->
+</table>
+</div>

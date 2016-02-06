@@ -1,0 +1,33 @@
+<script type='text/javascript'>
+<!--
+var Former = null;
+
+function rollOver(Stat,Xp,Rank,To) {
+ var Centr = document.getElementById("divCentr");
+  Former = Centr.innerHTML;
+  Centr.innerHTML = '<table cellspacing="0" cellpadding="0"><tr><th>'+Stat+':</th></tr><tr><td>Experience: '+Xp+'</td></tr><tr><td>XP to Level: '+To+'</td></tr><tr><td>Rank: '+Rank+'</td></tr></table>';
+}
+function rollOutq() {
+ var Centr = document.getElementById("divCentr");
+  Centr.innerHTML = Former;
+  Former = null;
+}
+function rollOutq() {
+ var Centr = document.getElementById("divq");
+  Centr.innerHTML = Former;
+  Former = null;
+}
+function rollOverq(Type) {
+ var Centr = document.getElementById("divq");
+ Centr.innerHTML = '<table cellspacing="0" cellpadding="0"><tr><th>'+Type+' Quest</th></tr></table>';
+}
+ 
+function openCalc(Stat,Target,Xp) {
+ top.openTab('index.php?a=calcs&calc='+Stat+'&level_start=0&target='+Target+'&current_type=xp&current='+Xp+'&special=0', 'Calculators', 'blnk');
+}
+function changeUser(Old) {
+ var User = prompt("Enter an account name to compare against:", Old);
+ if(User) window.location += '&char='+User;
+}
+//-->
+</script>

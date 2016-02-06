@@ -1,0 +1,28 @@
+<script type='text/javascript'>
+<!--
+var editing = 0;
+var xptable = new Array();
+<#xptable>
+
+function doEdit(skill) {
+ var form = document.getElementById('goaltracker');
+ form.innerHTML = '<form action="index.php?a=goal&e='+skill+'" method="post"><input type="hidden" name="current" value="'+xptable[skill][5]+'" /><div class="contain"><table width="100%"><tr><th class="th" colspan="2">'+skill+'</th></tr><tr><td>Goal&nbsp;start:</td><td><input type="text" name="start" value="'+xptable[skill][0]+'" /></td></tr><tr><td>Goal&nbsp;end:</td><td><input type="text" name="end" value="'+xptable[skill][2]+'" /></td></tr><tr><td colspan="2" style="text-align: center;"><input type="submit" value="Save" /> <input type="button" value="Cancel" onclick="doCancel(\''+skill+'\')" /> <input type="button" value="Reset Goal" onclick="window.location=\'index.php?a=goal&e='+skill+'&del=1\'" /></td></tr><tr><td colspan="2" style="text-align: center;">Enter level or XP; it will be converted automatically.</td></tr></table></div></form>';
+ editing = 1;
+}
+
+function doCancel(skill) {
+ editing = 0;
+ doShow(skill);
+}
+
+function doShow(skill) {
+ var skill = skill.replace("Hitpoints", "Lifepoints");
+ var form = document.getElementById('goaltracker');
+ if(editing != 1) form.innerHTML = '<div class="contain"><table width="100%" cellspacing="0"><tr><th colspan="2">'+skill+'</th></tr><tr><td width="1%" class="b">Goal&nbsp;start:</td><td width="99%">Level '+xptable[skill][3]+' ['+xptable[skill][0]+' xp]</td></tr><tr><td class="b">Goal&nbsp;end:</td><td>Level '+xptable[skill][4]+' ['+xptable[skill][2]+' xp]</td></tr><tr><td valign="top" class="b">Progress:</td><td>Level '+xptable[skill][7]+' ['+xptable[skill][6]+'% done]<br />'+xptable[skill][1]+' xp remaining</td></tr></table></div>';
+}
+
+function openCalc(skill) {
+ top.openTab('index.php?a=calcs&calc='+skill+'&level_start=0&target='+xptable[skill][4]+'&current_type=xp&current='+xptable[skill][5]+'&special=0', 'Calculators', 'blnk');
+}
+//-->
+</script>

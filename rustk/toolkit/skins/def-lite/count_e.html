@@ -1,0 +1,33 @@
+<form action="index.php" method="get">
+<input type="hidden" name="a" value="count" />
+<input type="hidden" name="do" value="<#id>" />
+
+ <table cellspacing="0" class="counter">
+ <tr>
+  <th colspan="2"><#action></th>
+ </tr>
+ <tr class="alt">
+  <td>Name:</td>
+  <td><input type="text" name="name" value="<#name>" /></td>
+ </tr>
+ <tr>
+  <td>Type:</td>
+  <td><select name="dir" onchange="javascript:switchUp(this.value);"><option value="down"<#sdown>>Countdown</option><option value="up"<#sup>>Countup</option><option value="loop"<#sloop>>Loop</option><option value="cntr"<#scntr>>Counter</option></select></td>
+ </tr>
+ <tr class="alt">
+  <td>Start At:</td>
+  <td><span id="values">
+  <if="$TMPL['set'] == 'cntr'">
+   <input type="text" name="val" size="2" value="<#val>" />
+   <input type="hidden" name="min" value="<#min>" />
+   <input type="hidden" name="sec" value="<#sec>" />
+  </if><else>
+   <input type="text" name="min" size="2" value="<#min>" />:<input type="text" name="sec" size="2" maxlength="2" value="<#fsec>" />
+   <input type="hidden" name="val" value="<#val>" />
+  </else></span></td>
+ </tr>
+ <tr>
+  <td colspan="2" style="text-align: center"><input type="submit" value="Submit" /> <input type="reset" value="Reset" /> <input type="button" value="Cancel" onclick="javascript:history.go(-1);" /></td>
+ </tr>
+ </table>
+</form>

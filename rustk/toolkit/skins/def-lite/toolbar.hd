@@ -1,0 +1,42 @@
+<style type="text/css">
+#a1, #a2, #a3, #a4, #a5, #a6, #a7 {
+	display: none;
+	margin: 0;
+}
+</style>
+<script type="text/javascript">
+<!--
+// Javascript Tab Management
+// © 2007 Ryan Hoerr
+
+var aId = 0;
+
+function openUp(Title,Icon,Id) {
+ document.getElementById('t'+Id).innerHTML = Title;
+ document.getElementById('i'+Id).src = 'imgs/ico_'+Icon+'.gif';
+ document.getElementById('a'+Id).style.display = 'inline';
+ return swapTo(Id);
+}
+function closeUp(Id,Nu) {
+ document.getElementById('a'+Id).style.display = 'none';
+ document.getElementById('e'+Id).className = '';
+ return swapTo(Nu);
+}
+function swapTo(Id) {
+ document.getElementById('e'+aId).className = '';
+ document.getElementById('e'+Id).className = 'selected';
+ aId = Id;
+ return true;
+}
+function chkclose(event,Id) {
+ var button = 0;
+ if (event.which == null) button = (event.button < 2) ? 0 : ((event.button == 4) ? 1 : 0);
+ else button = (event.which < 2) ? 0 : ((event.which == 2) ? 1 : 0);
+ if(button == 1) {
+  top.closeTab(Id);
+  if (event.preventDefault) event.preventDefault();
+  else event.returnValue = false;
+ }
+}
+//-->
+</script>

@@ -1,0 +1,48 @@
+ <div class="contain">
+  <form action="index.php" method="get">
+  <input type="hidden" name="a" value="monster" />
+  <table width="100%" cellspacing="0">
+   <tr>
+    <td>Keywords:</td>
+    <td><input type="text" name="search_term" value="" size="25" /></td>
+   </tr>
+   <tr>
+    <td>Search Area:</td>
+    <td><select name="search_area"><#search_areas></select> <input type="submit" value="Find" /></td>
+   </tr>
+  </table>
+  </form>
+ </div>
+
+<div class="contain">
+<table class="items">
+<tr><th colspan="2"><#m_name></th></tr>
+<tr><td colspan="2"><div style="text-align: center; max-height: 150px; overflow: hidden;"><img src="http://www.zybez.net/img/npcimg/<if="$TMPL['m_npc'] == '0'">npc/</if><#m_img>" alt="Picture of <#m_name>" /></div></td></tr>
+<if="$TMPL['m_combat'] != '0'"><tr>
+<td><b>Combat:</b> <#m_combat></td>
+<td><b>Lifepoints:</b> <#m_hp></td>
+</tr>
+<tr>
+<td colspan="2"><b>Members:</b> <#m_member></td>
+<!--- <td><b>Max Hit:</b> <#m_maxhit></td> --->
+</tr>
+<!--- <tr><td colspan="2"><b>Race:</b> <#m_race></td></tr> --->
+<tr><td colspan="2"><b>Aggressive:</b> <#m_nature></td></tr>
+<tr><td colspan="2"><b>Attack Style:</b> <#m_attstyle></td></tr></if><else><tr>
+<td><b>Members:</b> <#m_member></td>
+<!--- <td><b>Race:</b> <#m_race></td> --->
+</tr></else>
+<!--- <tr><td colspan="2"><b>Quest:</b> <#m_questlist></td></tr> --->
+<tr><td colspan="2"><b>Examine:</b> <#m_examine></td></tr>
+</table></div>
+
+<div class="contain">
+<table class="items">
+<tr><td><b>Found:</b> <#m_locations></td></tr>
+<if="$TMPL['m_combat'] != '0'"><tr><td><b>Tactic:</b> <#m_tactic></td></tr>
+<tr><td><b>Drops:</b> <#m_drops></td></tr></if>
+<if="$TMPL['m_combat'] != '0' && $TMPL['m_i_drops'] != 'None.' && $TMPL['m_i_drops'] != 'None' && $TMPL['m_i_drops'] != ''"><tr><td><b>Top Drops:</b> <#m_i_drops></td></tr></if>
+<tr><td><b>Notes:</b> <#m_notes></td></tr>
+<tr><td><b>Credits:</b> <#m_credits></td></tr>
+</table>
+</div>

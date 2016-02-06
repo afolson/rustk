@@ -1,0 +1,127 @@
+<script language="javascript" type="text/javascript">
+<!--
+function popitup(url) {
+	newwindow=window.open(url,'name','height=600,width=500,scrollbars=yes');
+	if (window.focus) {newwindow.focus()}
+	return false;
+}
+
+// -->
+</script>
+
+<style type="text/css">
+.tabletop,
+.tablebottom {
+	font: 10px Verdana, Arial, serif;
+	margin-bottom: 18px;
+	padding: 1px;
+	text-align: center;
+	}
+.tabletop {
+	font-weight: bold;
+	}
+.title1,
+.title2,
+.title3 {
+	background: transparent;
+	border: 0px;
+	text-align: left;
+	padding: 1px 0px;
+	margin: 0px;
+	font: bold 13px Verdana, Arial, serif;
+	}
+.title1 {
+	margin: 6px 0 18px 0;
+	font: bold 15px Verdana, Arial, serif;
+	}
+.title3 {
+	font: bold 11px Verdana, Arial, serif;
+	}
+.linksmenu {
+	text-align: left;
+	}
+hr {
+	background: #A7A6AA;
+	height: 1px;
+	border: 0;
+	}
+body {
+	font: 11px Verdana, Arial, serif;
+	text-align: left;
+	padding: 4px;
+	line-height: 1.1;
+	width: auto !important;
+	width: 97%;
+	}
+ul {
+	list-style: none;
+	}
+table {
+	border-collapse: collapse;
+	width: auto;
+	margin: 4px auto 4px 4px;
+	}
+strong {
+	font: 11px Verdana, Arial, serif;
+	font-weight: bold;
+	margin-bottom: 3px;
+	margin-top: 0;
+	}
+
+/* QUEST CSS */
+
+#quote {
+	border: dashed 1px #069;
+	font-style: oblique;
+	margin: 5px auto;
+	padding: 1em;
+	text-align: justify;
+	width: 80%;
+	}
+.step {
+	border-bottom: 1px dashed gray;
+	clear: both;
+	margin-bottom: 10px;
+	}
+.step-content {
+	margin-bottom: 0;
+	}
+.part, .step-title {
+	color: #424242;
+	font-size: 18px;
+	margin: 0;
+	width: 65%;
+	min-width: 200px;
+	}
+.part {
+	border-bottom: 3px solid #0974CC;
+	padding: 10px 10px 10px 0;
+	text-align: right;
+	margin-bottom: 10px;
+	}
+.step-content, .step {
+	padding-bottom: 10px;
+	padding-left: 10px;
+	}
+.note {
+	margin-bottom: 0;
+	padding:5px 0;
+	background-color: #f6d2d2;
+	border:2px #edbfbf solid;
+	background: #f6d2d2 url('/img/qimg/notice.png') left no-repeat;
+	padding-left: 9%;
+	}
+.step-title span {
+	display: none;
+	}
+.step-list {
+	margin: 0;
+	padding: 0 0 0 10px;
+	}
+.top {
+	margin: 1pt;
+	padding: 1em;
+	vertical-align: top;
+	}
+</style>
+

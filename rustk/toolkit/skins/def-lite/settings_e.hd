@@ -1,0 +1,10 @@
+<style type="text/css">
+td {
+	border-top: 1px solid #A7A6AA;
+	padding: 3px;
+	}
+.message {
+	border-top: none;
+	padding: 10px 5px 10px 5px;
+	}
+</style>

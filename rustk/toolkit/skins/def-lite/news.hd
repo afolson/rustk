@@ -1,0 +1,11 @@
+<style type="text/css">
+body {
+	background: #EBE9ED !important;
+	color: #111;
+	font: 9pt/1.3 verdana, tahoma, helvetica, sans serif;
+	}
+table {
+	background: #D1D5D7 url('skins/def-lite/imgs/subtile.gif') repeat-x bottom;
+	margin: 5px 0;
+	}
+</style>

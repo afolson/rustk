@@ -1,0 +1,25 @@
+<table style="margin: auto;" cellspacing="4"><tr><td style="border: 1px solid #A7A6AA;">
+
+<form action="extras/locator_image.php?skin=1" method="post" target="map">
+<table cellspacing="0" class="table">
+<tr><th colspan="5">Co-ordinates</th></tr>
+<tr>
+<td>Degrees:</td><td><input type="text" name="v_deg" size="2" maxlength="2" value="00" autocomplete="off" /></td>
+<td>Minutes:</td><td><input type="text" name="v_min" size="2" maxlength="2" value="00" autocomplete="off" /></td>
+<td><select name="v_direction"><option value="north" selected="selected">North</option><option value="south">South</option></select></td>
+</tr>
+<tr class="alt">
+<td>Degrees:</td><td><input type="text" name="h_deg" size="2" maxlength="2" value="00" autocomplete="off" /></td>
+<td>Minutes:</td><td><input type="text" name="h_min" size="2" maxlength="2" value="00" autocomplete="off" /></td>
+<td><select name="h_direction"><option value="east" selected="selected">East&nbsp;</option><option value="west">West&nbsp;</option></select></td>
+</tr>
+<tr><td colspan="5"><input type="submit" value="Locate my Clue!" /> <input type="reset" value="Reset" /></td></tr>
+</table></form>
+
+</td></tr>
+<tr><td style="border: 1px solid #A7A6AA;">
+
+<iframe name="map" class="frame" src="extras/locator_image.php?skin=1" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+
+</td></tr>
+</table>
